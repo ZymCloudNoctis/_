@@ -154,20 +154,10 @@
        src="http://music.163.com/song/media/outer/url?id=1851244378.mp3">
 </audio>
 <script>
-    // // 这里使用了微信自带的WeixinJSBridgeReady事件
-    // document.addEventListener('WeixinJSBridgeReady', function() {
-    //     document.getElementById('music').play()
-    // })
-    function autoPlayAudio() {
-        window.onload = function() {
-            WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
-                document.getElementById('music').play();
-            });
-        };
-    }
-
-    autoPlayAudio()
+    // 这里使用了微信自带的WeixinJSBridgeReady事件
+    document.addEventListener('WeixinJSBridgeReady', function() {
+        document.getElementById('music').play()
+    })
 </script>
-<script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
 </body>
 </html>
