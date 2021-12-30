@@ -158,23 +158,16 @@
     // document.addEventListener('WeixinJSBridgeReady', function() {
     //     document.getElementById('music').play()
     // })
-    function autoPlayAudio1() {
-        wx.config({
-            // 配置信息, 即使不正确也能使用 wx.ready
-            debug: false,
-            appId: 'wx7bc780a157f07611',
-            timestamp: 1,
-            nonceStr: '',
-            signature: '',
-            jsApiList: []
-        });
-        wx.ready(function() {
-            document.getElementById('music').play();
-        });
+    function autoPlayAudio() {
+        window.onload = function() {
+            WeixinJSBridge.invoke('getNetworkType', {}, function(e) {
+                document.getElementById('music').play();
+            });
+        };
     }
 
+    autoPlayAudio()
 </script>
-<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
 </body>
 </html>
-
