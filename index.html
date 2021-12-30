@@ -148,19 +148,33 @@
         return true;
     }
 
-
-
 </script>
 <!--播放背景音乐容器-->
 <audio id='music' autoplay="autoplay" loop="loop" preload="auto"
        src="http://music.163.com/song/media/outer/url?id=1851244378.mp3">
 </audio>
 <script>
-    // 这里使用了微信自带的WeixinJSBridgeReady事件
-    document.addEventListener('WeixinJSBridgeReady', function() {
-        document.getElementById('music').play()
-    })
+    // // 这里使用了微信自带的WeixinJSBridgeReady事件
+    // document.addEventListener('WeixinJSBridgeReady', function() {
+    //     document.getElementById('music').play()
+    // })
+    function autoPlayAudio1() {
+        wx.config({
+            // 配置信息, 即使不正确也能使用 wx.ready
+            debug: false,
+            appId: 'wx7bc780a157f07611',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+        wx.ready(function() {
+            document.getElementById('music').play();
+        });
+    }
 
 </script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 </body>
 </html>
+
