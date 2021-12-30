@@ -155,9 +155,14 @@
 </audio>
 <script>
     // 这里使用了微信自带的WeixinJSBridgeReady事件
-    document.addEventListener('WeixinJSBridgeReady', function() {
+    // document.addEventListener('WeixinJSBridgeReady', function() {
+    //     document.getElementById('music').play()
+    // })
+
+    document.addEventListener('touchstart', function() {
         document.getElementById('music').play()
     })
+
 </script>
 </body>
 </html>
